@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-label="Imagem de projeto — substituir por imagem real">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0d15"/>
+      <stop offset="1" stop-color="#07090e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.3" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#4c8dff" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#4c8dff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7ab1ff"/>
+      <stop offset="1" stop-color="#4c8dff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" fill="url(#bg)"/>
+  <circle cx="180" cy="170" r="300" fill="url(#glow)"/>
+  <g stroke="#2b3a5c" stroke-width="1">
+    <path d="M60 300 L740 300 M60 330 L740 330 M60 360 L740 360 M60 390 L740 390 M60 420 L740 420 M60 450 L740 450"/>
+    <path d="M300 60 L300 500 M330 60 L330 500 M360 60 L360 500 M390 60 L390 500 M420 60 L420 500"/>
+  </g>
+  <g fill="none" stroke="url(#pl)" stroke-width="3">
+    <path d="M80 420 L260 420 L340 300 L440 300 L520 240 L720 240" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M80 450 L200 450 L280 360 L400 360 L470 330 L720 330" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.5"/>
+  </g>
+  <circle cx="80" cy="420" r="6" fill="#7ab1ff"/>
+  <circle cx="520" cy="240" r="7" fill="#7ab1ff"/>
+  <circle cx="720" cy="240" r="5" fill="#7ab1ff"/>
+  <text x="400" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="4" fill="#8b93a3" fill-opacity="0.55">PLACEHOLDER — SUBSTITUIR IMAGEM</text>
+</svg>

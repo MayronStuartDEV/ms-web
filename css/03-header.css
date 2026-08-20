@@ -1,0 +1,376 @@
+/* ============================================================
+   03 — HEADER (barra de navegação fixa)
+   ============================================================ */
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.is-scrolled {
+  background: rgba(8, 10, 16, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--line);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* ---- Logo (substituir pelo logotipo oficial) ---- */
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-logo-placeholder {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 7px 16px 7px 8px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 12px;
+  background: var(--bg-2);
+  transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+
+.site-logo:hover .site-logo-placeholder {
+  border-color: var(--line-blue);
+  background: var(--bg-3);
+}
+
+.site-logo-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--gradient);
+  box-shadow: 0 4px 18px var(--blue-glow);
+  position: relative;
+}
+
+.site-logo-mark::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: 4px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.site-logo-text {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+/* ---- Navegação ---- */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-soft);
+  padding-block: 8px;
+  transition: color 0.3s var(--ease);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease);
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav-cta {
+  padding: 11px 22px;
+  font-size: 0.9rem;
+}
+
+/* ---- Botão hambúrguer (mobile) ---- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--bg-2);
+  transition: border-color 0.3s var(--ease);
+}
+
+.nav-toggle:hover {
+  border-color: var(--line-blue);
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text-soft);
+  transition: transform 0.35s var(--ease), opacity 0.35s var(--ease), background-color 0.3s var(--ease);
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background: var(--blue-bright);
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  background: var(--blue-bright);
+}
+
+
+
+/* ============================================================
+   HEADER 2.0 — refinamento visual e microinterações
+   ============================================================ */
+
+/* Linha de acabamento tecnológico */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: min(520px, 42vw);
+  height: 1px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(61, 125, 255, 0.75),
+    transparent
+  );
+  opacity: 0;
+  transition:
+    transform 0.7s var(--ease),
+    opacity 0.5s var(--ease);
+  pointer-events: none;
+}
+
+.site-header.is-scrolled::after {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
+}
+
+/* ---- Logo: remove aparência de placeholder ---- */
+
+.site-logo {
+  position: relative;
+  transition:
+    transform 0.35s var(--ease),
+    filter 0.35s var(--ease);
+}
+
+.site-logo:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 16px rgba(61, 125, 255, 0.16));
+}
+
+.site-logo-placeholder {
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 5px 10px 5px 4px;
+  border-radius: 12px;
+}
+
+.site-logo:hover .site-logo-placeholder {
+  border-color: rgba(61, 125, 255, 0.18);
+  background: rgba(61, 125, 255, 0.045);
+}
+
+.site-logo-mark {
+  transition:
+    transform 0.45s var(--ease),
+    box-shadow 0.45s var(--ease);
+}
+
+.site-logo:hover .site-logo-mark {
+  transform: rotate(-4deg) scale(1.05);
+  box-shadow:
+    0 5px 22px var(--blue-glow),
+    0 0 0 4px rgba(61, 125, 255, 0.06);
+}
+
+/* ---- Navegação refinada ---- */
+
+.nav-list {
+  gap: 8px;
+}
+
+.nav-link {
+  padding: 9px 12px;
+  border-radius: 9px;
+  transition:
+    color 0.3s var(--ease),
+    background-color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.nav-link::after {
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
+  width: auto;
+  height: 1px;
+  transform-origin: center;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.025);
+  transform: translateY(-1px);
+}
+
+.nav-link.is-active {
+  color: var(--text);
+  background: rgba(61, 125, 255, 0.055);
+}
+
+.nav-link.is-active::after {
+  box-shadow: 0 0 10px rgba(61, 125, 255, 0.45);
+}
+
+/* ---- CTA do header ---- */
+
+.nav-cta {
+  position: relative;
+  padding: 11px 20px;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 24px rgba(61, 125, 255, 0.16);
+}
+
+.nav-cta::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow:
+    0 12px 32px rgba(61, 125, 255, 0.28);
+}
+
+/* ---- Menu mobile ---- */
+
+@media (max-width: 720px) {
+  .site-nav {
+    transform: translateY(-10px);
+    transition:
+      opacity 0.35s var(--ease),
+      visibility 0.35s var(--ease),
+      transform 0.45s var(--ease);
+  }
+
+  .site-nav.is-open {
+    transform: translateY(0);
+  }
+
+  .nav-list {
+    gap: 4px;
+  }
+
+  .nav-link {
+    border-radius: 12px;
+    padding: 12px 22px;
+  }
+
+  .nav-link:hover,
+  .nav-link.is-active {
+    background: rgba(61, 125, 255, 0.08);
+  }
+
+  .nav-link.is-active {
+    color: var(--blue-bright);
+  }
+
+  .nav-cta {
+    box-shadow: 0 10px 30px rgba(61, 125, 255, 0.22);
+  }
+}
+
+
+/* Logo oficial MS Web */
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-logo-image {
+  display: block;
+  width: auto;
+  height: 84px;
+  max-width: 190px;
+  object-fit: contain;
+  transition:
+    transform 0.35s var(--ease),
+    filter 0.35s var(--ease);
+}
+
+.site-logo:hover .site-logo-image {
+  transform: translateY(-1px) scale(1.025);
+  filter: drop-shadow(0 0 14px rgba(61, 125, 255, 0.2));
+}
+
+@media (max-width: 720px) {
+  .site-logo-image {
+    height: 70px;
+    max-width: 160px;
+  }
+}

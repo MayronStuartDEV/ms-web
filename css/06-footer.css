@@ -1,0 +1,105 @@
+/* ============================================================
+   06 — FOOTER
+   ============================================================ */
+
+.site-footer {
+  background: var(--bg-0);
+  border-top: 1px solid var(--line);
+  padding-top: clamp(56px, 7vw, 90px);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 44px;
+  padding-bottom: 56px;
+}
+
+.footer-brand p {
+  margin-top: 18px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 300px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--bg-2);
+  color: var(--text-muted);
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease-spring), box-shadow 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+
+.social-link:hover {
+  border-color: var(--line-blue);
+  color: var(--blue-bright);
+  background: var(--blue-glow-soft);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--blue-glow-soft);
+}
+
+.site-logo-footer .site-logo-placeholder {
+  border-style: dashed;
+}
+
+.footer-col h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a,
+.footer-contact li > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.footer-col a:hover {
+  color: var(--blue-bright);
+  transform: translateX(3px);
+}
+
+.footer-contact .icon {
+  width: 17px;
+  height: 17px;
+  color: var(--blue);
+}
+
+.footer-contact a:hover .icon {
+  color: var(--blue-bright);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 26px;
+  border-top: 1px solid var(--line);
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}

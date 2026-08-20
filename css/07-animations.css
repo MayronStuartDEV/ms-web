@@ -1,0 +1,60 @@
+/* ============================================================
+   07 — ANIMAÇÕES (revelação no scroll e utilitários)
+   ============================================================ */
+
+/* Estados iniciais — revelados via JS (IntersectionObserver) */
+.reveal,
+[data-reveal="up"],
+[data-reveal="left"],
+[data-reveal="right"],
+[data-reveal="zoom"] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.reveal {
+  transform: translateY(28px);
+}
+
+[data-reveal="up"] {
+  transform: translateY(28px);
+}
+
+[data-reveal="left"] {
+  transform: translateX(-40px);
+}
+
+[data-reveal="right"] {
+  transform: translateX(120px);
+}
+
+[data-reveal="zoom"] {
+  transform: scale(0.94);
+}
+
+/* Estado visível */
+.is-visible,
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Duração e easing */
+.reveal,
+[data-reveal] {
+  transition:
+    opacity var(--dur-slow) var(--ease),
+    transform var(--dur-slow) var(--ease);
+}
+
+
+
+/* Quando reduzir movimento: nada de animações de scroll */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

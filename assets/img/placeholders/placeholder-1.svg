@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-label="Imagem de projeto — substituir por imagem real">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0d15"/>
+      <stop offset="1" stop-color="#07090e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4c8dff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4c8dff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="arc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7ab1ff"/>
+      <stop offset="1" stop-color="#4c8dff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" fill="url(#bg)"/>
+  <circle cx="400" cy="280" r="240" fill="url(#glow)"/>
+  <g fill="none" stroke="#2b3a5c" stroke-width="1">
+    <circle cx="400" cy="280" r="180"/>
+    <circle cx="400" cy="280" r="130"/>
+    <circle cx="400" cy="280" r="80"/>
+  </g>
+  <path d="M400 100 A180 180 0 0 1 580 280" fill="none" stroke="url(#arc)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="400" cy="280" r="10" fill="#7ab1ff"/>
+  <circle cx="580" cy="280" r="6" fill="#7ab1ff"/>
+  <text x="400" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="4" fill="#8b93a3" fill-opacity="0.55">PLACEHOLDER — SUBSTITUIR IMAGEM</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-label="Imagem de projeto — substituir por imagem real">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0d15"/>
+      <stop offset="1" stop-color="#07090e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4c8dff" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#4c8dff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="560" fill="url(#bg)"/>
+  <circle cx="400" cy="280" r="250" fill="url(#glow)"/>
+  <g fill="#2b3a5c">
+    <circle cx="110" cy="110" r="2"/>
+    <circle cx="200" cy="110" r="2"/>
+    <circle cx="290" cy="110" r="2"/>
+    <circle cx="380" cy="110" r="2"/>
+    <circle cx="470" cy="110" r="2"/>
+    <circle cx="560" cy="110" r="2"/>
+    <circle cx="650" cy="110" r="2"/>
+    <circle cx="110" cy="200" r="2"/>
+    <circle cx="200" cy="200" r="2"/>
+    <circle cx="290" cy="200" r="2"/>
+    <circle cx="470" cy="200" r="2"/>
+    <circle cx="560" cy="200" r="2"/>
+    <circle cx="650" cy="200" r="2"/>
+    <circle cx="110" cy="290" r="2"/>
+    <circle cx="200" cy="290" r="2"/>
+    <circle cx="290" cy="290" r="2"/>
+    <circle cx="380" cy="290" r="2"/>
+    <circle cx="470" cy="290" r="2"/>
+    <circle cx="650" cy="290" r="2"/>
+    <circle cx="110" cy="380" r="2"/>
+    <circle cx="200" cy="380" r="2"/>
+    <circle cx="380" cy="380" r="2"/>
+    <circle cx="560" cy="380" r="2"/>
+    <circle cx="650" cy="380" r="2"/>
+    <circle cx="110" cy="470" r="2"/>
+    <circle cx="290" cy="470" r="2"/>
+    <circle cx="380" cy="470" r="2"/>
+    <circle cx="470" cy="470" r="2"/>
+    <circle cx="650" cy="470" r="2"/>
+  </g>
+  <g fill="#7ab1ff">
+    <circle cx="380" cy="200" r="4"/>
+    <circle cx="470" cy="200" r="4"/>
+    <circle cx="290" cy="290" r="4"/>
+    <circle cx="380" cy="290" r="4"/>
+    <circle cx="470" cy="290" r="4"/>
+    <circle cx="380" cy="380" r="4"/>
+  </g>
+  <rect x="328" y="148" width="194" height="284" rx="10" fill="none" stroke="#4c8dff" stroke-width="2"/>
+  <text x="400" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="4" fill="#8b93a3" fill-opacity="0.55">PLACEHOLDER — SUBSTITUIR IMAGEM</text>
+</svg>
