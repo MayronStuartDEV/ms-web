@@ -34,7 +34,7 @@ window.MSWEB.portfolio = [
     category: "ecommerce",
     description: "Loja virtual com experiência de compra fluida, checkout otimizado e gestão de catálogo simplificada.",
     tags: ["E-commerce", "UI/UX", "Performance"],
-    image: "assets/img/portfolio/e-commerce.png",
+    image: "assets/img/portfolio/E-commerce.png",
     link: "#"
   },
   {
