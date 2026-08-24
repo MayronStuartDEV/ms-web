@@ -30,7 +30,7 @@ window.MSWEB.portfolio = [
   },
   {
     id: "projeto-2",
-    title: "E-commerce de Moda",
+    title: "E-commerce",
     category: "ecommerce",
     description: "Loja virtual com experiência de compra fluida, checkout otimizado e gestão de catálogo simplificada.",
     tags: ["E-commerce", "UI/UX", "Performance"],
