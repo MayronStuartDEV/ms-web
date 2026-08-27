@@ -1,0 +1,155 @@
+
+/* ============================================================
+   MS WEB INTRO — integração com o site principal
+   A animação é isolada em .ms-intro-* para não interferir
+   no restante do site.
+   ============================================================ */
+
+.ms-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #020308;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 900ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              visibility 0s linear 0s;
+}
+
+.ms-intro-overlay.is-transitioning {
+  background: rgba(2, 3, 8, 0.34);
+  transition:
+    background 1450ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 1450ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.ms-intro-overlay.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 900ms cubic-bezier(0.22, 0.61, 0.36, 1),
+              visibility 0s linear 900ms;
+}
+
+.ms-intro-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ms-intro-mark {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-inline: 24px;
+  text-align: center;
+  pointer-events: none;
+  font-family: var(--font-display);
+}
+
+.ms-intro-title {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  text-shadow: 0 0 28px rgba(39, 167, 255, 0.35);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.ms-intro-title.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ms-intro-rule {
+  width: 96px;
+  height: 1px;
+  background: rgba(61, 125, 255, 0.5);
+  transform: scaleX(0);
+  opacity: 0;
+  transition: transform 700ms ease, opacity 700ms ease;
+}
+
+.ms-intro-rule.is-visible {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+body.ms-intro-lock {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-intro-overlay,
+  .ms-intro-title,
+  .ms-intro-rule,
+  body.ms-intro-lock .site-header,
+  body.ms-intro-lock main,
+  body.ms-intro-lock .site-footer {
+    transition: none;
+  }
+}
+
+
+/* ============================================================
+   TRANSIÇÃO INTRO → HOME — handoff do circuito para a interface
+   ============================================================ */
+body.ms-intro-lock .site-header,
+body.ms-intro-lock main,
+body.ms-intro-lock .site-footer {
+  opacity: 0;
+  transform: translateY(8px) scale(1.008);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 1100ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+body.ms-intro-transition .site-header,
+body.ms-intro-transition main,
+body.ms-intro-transition .site-footer {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+body.ms-intro-transition .hero-bg {
+  animation: msHeroAmbientIn 1400ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes msHeroAmbientIn {
+  from { opacity: 0.15; transform: scale(1.035); }
+  to   { opacity: 1; transform: scale(1); }
+}
+/* ============================================================
+   INTRO — ajuste mobile: marca maior e composição mais aberta
+   ============================================================ */
+@media (max-width: 720px) {
+  .ms-intro-title {
+    font-size: clamp(1.95rem, 8vw, 2.65rem);
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
+  }
+}
+
+@media (max-width: 520px) {
+  .ms-intro-mark {
+    bottom: 10%;
+    gap: 10px;
+  }
+
+  .ms-intro-title {
+    font-size: clamp(2.05rem, 9vw, 2.75rem);
+  }
+}
+
