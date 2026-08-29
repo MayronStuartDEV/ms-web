@@ -317,6 +317,7 @@
     finished=true;
     document.body.classList.remove("ms-intro-lock");
     overlay.classList.add("is-done");
+    window.dispatchEvent(new CustomEvent("msIntroComplete"));
   }
 
   function frame(now){

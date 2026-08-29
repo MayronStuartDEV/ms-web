@@ -546,3 +546,60 @@ if (whatsappCta) {
     }
   });
 }
+
+
+/* =========================================
+   WHATSAPP FLUTUANTE
+========================================= */
+
+const whatsappFloat = document.getElementById("whatsappFloat");
+const contatoSection = document.getElementById("contato");
+
+if (whatsappFloat) {
+
+    // Controla se a intro já terminou
+    let whatsappReady = false;
+
+    // A intro terminou → libera o WhatsApp
+    window.addEventListener("msIntroComplete", () => {
+
+        whatsappReady = true;
+        whatsappFloat.classList.add("show");
+
+    });
+
+    // Esconde ao entrar em Contato
+    // e mostra novamente ao sair
+    if (contatoSection) {
+
+        const contatoObserver = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    // Antes da intro terminar, não faz absolutamente nada
+                    if (!whatsappReady) return;
+
+                    if (entry.isIntersecting) {
+
+                        // Entrou em Contato → esconde
+                        whatsappFloat.classList.remove("show");
+
+                    } else {
+
+                        // Saiu de Contato → mostra novamente
+                        whatsappFloat.classList.add("show");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.05
+            }
+        );
+
+        contatoObserver.observe(contatoSection);
+    }
+}
